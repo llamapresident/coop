@@ -1,6 +1,6 @@
-import bs4
-import requests
-request = requests.get("https://www.evit.com/high_school_career_training/hs")
-soup = bs4.BeautifulSoup(request.text, 'html.parser')
-print(soup.select('#ctl00_ContentPlaceHolder1_ctl11_divContent > ul'))
-for elem in programNames:
+from requests_html import HTML, HTMLSession
+
+session = HTMLSession()
+r = session.get('https://www.evit.com/high_school_career_training/hs')
+main_content = r.html.find('div.main-content', first=True)
+print(main_content.text)
