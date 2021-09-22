@@ -1,3 +1,7 @@
+# Morgan
+# WebScraping
+# 9/22
+
 from requests_html import HTML, HTMLSession
 
 session = HTMLSession()
